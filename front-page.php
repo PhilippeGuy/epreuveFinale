@@ -28,7 +28,7 @@ get_header();
 
 		endwhile; // End of the loop.
 
-        echo '<h1>Conférences</h1>';
+
         // The Query
         $args = array(
             "category_name" => "cours",

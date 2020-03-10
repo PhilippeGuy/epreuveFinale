@@ -73,7 +73,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Posts and pages
+## front page
 --------------------------------------------------------------*/
 .articleGauche {
   display: -webkit-box;
@@ -124,6 +124,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   max-height: 200px;
   min-width: 200px;
   min-height: 200px;
+}
+
+/*--------------------------------------------------------------
+## cours
+--------------------------------------------------------------*/
+#cours {
+  margin-left: 5em;
 }
 
 /*--------------------------------------------------------------
