@@ -32,15 +32,20 @@ get_header();
         // The Query
         $args = array(
             "category_name" => "cours",
-            "posts_per_page" => 10
+            "posts_per_page" => -1,
+            'orderby' => 'title',
+            'order'   => 'ASC'
         );
         $query1 = new WP_Query( $args );
 
+        
+        echo'<ol>';
         // The Loop
         while ( $query1->have_posts() ) {
             $query1->the_post();
-            echo '<div>'. get_the_title() .'</div>';
+            echo '<li><a href="'.get_permalink().'">'. get_the_title() .'</a></li>';
         }
+        echo'</ol>';
 
         /* Restore original Post Data 
          * NB: Because we are using new WP_Query we aren't stomping on the 
