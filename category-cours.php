@@ -51,13 +51,23 @@ get_header();
                     );
                     $query1 = new WP_Query( $args );
                 
+                    $dprecedent = 0;
+                    $nbPadding = 0;
                     // The Loop
                     while ( $query1->have_posts() ) {
                         $query1->the_post();
 
                         $s = substr(get_the_title(), 4,1);
                         $d = substr(get_the_title(), 5,1);
-                        echo '<a style="grid-area:'. ($s+1) .' / '. $d .' / '. ($s+2) .' / '. ($d+1) .'" href='.get_permalink().'>'. substr(get_the_title(), 0,7) .'</a>';
+                        $paddingTop = "";
+                        if(($dprecedent) == $d){
+                            $nbPadding+=1.2;
+                            $paddingTop = "padding-top: ".$nbPadding."em";
+                        }else{
+                            $nbPadding = 0;
+                        }
+                        $dprecedent = $d;
+                        echo '<a style="grid-area:'. ($s+1) .' / '. $d .' / '. ($s+2) .' / '. ($d+1) .'; '.$paddingTop.'"  href='.get_permalink().'>'. substr(get_the_title(), 0,7) .'</a>';
                     }
                 
                     /* Restore original Post Data 
