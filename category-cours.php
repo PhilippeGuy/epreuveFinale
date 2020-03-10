@@ -23,7 +23,9 @@ get_header();
 		        // The Query
                 $args = array(
                     "category_name" => "cours",
-                    "posts_per_page" => -1
+                    "posts_per_page" => -1,
+                    'orderby' => 'title',
+                    'order'   => 'ASC'
                 );
                 $query1 = new WP_Query( $args );
             
