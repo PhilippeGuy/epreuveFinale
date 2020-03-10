@@ -54,7 +54,10 @@ get_header();
                     // The Loop
                     while ( $query1->have_posts() ) {
                         $query1->the_post();
-                        echo '<p><a href='.get_permalink().'>'. substr(get_the_title(), 0,7) .'</a></p>';
+
+                        $s = substr(get_the_title(), 4,1);
+                        $d = substr(get_the_title(), 5,1);
+                        echo '<a style="grid-area:'. ($s+1) .' / '. $d .' / '. ($s+2) .' / '. ($d+1) .'" href='.get_permalink().'>'. substr(get_the_title(), 0,7) .'</a>';
                     }
                 
                     /* Restore original Post Data 
