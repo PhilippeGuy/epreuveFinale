@@ -6,4 +6,16 @@
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(6,1fr);
+
+
+    align-items: center;
+    a, h2{
+        justify-self: center;
+    }
+    a{
+        text-align: center;
+        height: 80px;
+        border: 1px solid black;
+        width: 100%;
+    }
 }
