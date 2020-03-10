@@ -23,7 +23,7 @@ get_header();
 		        // The Query
                 $args = array(
                     "category_name" => "cours",
-                    "posts_per_page" => 10
+                    "posts_per_page" => -1
                 );
                 $query1 = new WP_Query( $args );
             
