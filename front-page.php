@@ -43,7 +43,7 @@ get_header();
         // The Loop
         while ( $query1->have_posts() ) {
             $query1->the_post();
-            echo '<li><a href="'.get_permalink().'">'. get_the_title() .'</a></li>';
+            echo '<li> <p><a href="'.get_permalink().'">'. get_the_title() .'</a> - session : '.substr(get_the_title(), 4, 1).' - domaine : '.substr(get_the_title(), 5, 1).'</p> </li>';
         }
         echo'</ol>';
 
